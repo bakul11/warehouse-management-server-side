@@ -13,7 +13,7 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 client.connect((err) => {
-  const collection = client.db(process.env.DB_NAME).collection(process.env.DB_COLL);
+  const collection = client.db(process.env.DB_NAME).collection("product");
   console.log("database connected success");
 
   // Product Read Form MongoDB
