@@ -9,11 +9,11 @@ app.use(cors());
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jmunj.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.jmunj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 client.connect((err) => {
-  const collection = client.db(process.env.DB_NAME).collection("product");
+  const collection = client.db("management").collection("product");
   console.log("database connected success");
 
   // Product Read Form MongoDB
